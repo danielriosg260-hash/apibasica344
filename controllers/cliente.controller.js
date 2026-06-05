@@ -48,3 +48,13 @@ exports.eliminar = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.listar = async () => {
+  try {
+    const clientes = await Cliente.find();
+    return clientes;
+  } catch (error) {
+    console.error('Error al listar clientes:', error.message);
+    return [];
+  }
+};

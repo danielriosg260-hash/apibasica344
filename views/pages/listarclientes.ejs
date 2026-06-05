@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Clientes</title>
+</head>
+<body>
+    <h1>Listado de Clientes</h1>
+    
+    <% if (clientes.length > 0) { %>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% clientes.forEach(function(cliente) { %>
+                    <tr>
+                        <td><%= cliente._id %></td>
+                        <td><%= cliente.nombre %></td>
+                        <td><%= cliente.email %></td>
+                        <td><%= cliente.telefono %></td>
+                        <td><%= cliente.direccion %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No hay clientes registrados</p>
+    <% } %>
+</body>
+</html>
